@@ -1,19 +1,19 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-# 内部ストレージへリンク
-termux-setup-storage
-
 # パッケージを更新
 yes | pkg upgrade
 
+# 内部ストレージへリンク
+termux-setup-storage
+
 # 必要なパッケージをまとめてインストール
-yes | pkg install proot yarn curl wget build-essential vim wget zsh
+yes | pkg install proot yarn git curl wget build-essential vim wget zsh
 
 # Zshを既定のシェルにする
-cash -s zsh
+chsh -s zsh
 
 # .zshrcファイルを構成
-touch .zshrc
+touch ~/.zshrc
 
 # エイリアスの設定
 echo "alias re='exec $SHELL -l'
@@ -78,7 +78,7 @@ alias aptr='apt remove'
 alias apti='apt install'
 alias aptl='apt list'
 alias aptu='apt update && apt upgrade'
-alias apti='apt install'" > .zshrc
+alias apti='apt install'" > ~/.zshrc
 
-echo Done!
+echo Done!!
 exit
