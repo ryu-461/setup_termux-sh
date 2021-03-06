@@ -2,24 +2,16 @@
 
 # パッケージを更新
 yes | pkg upgrade
+apt-get update && apt-get upgrade -y
 
 # 内部ストレージへリンク
 termux-setup-storage
 
 # 必要なパッケージをまとめてインストール
-yes | pkg install proot yarn git curl wget build-essential vim wget zsh
-
-# プロジェクト管理ディレクトリを作成
-mkdir -p ~/Documents
-
-# Zshを既定のシェルに設定
-chsh -s zsh
+apt-get install wget proot git -y
 
 # .bashrcを作成
-touch ~/.bashrc | echo "zsh" > ~/.bashrc
-
-# .zshrcを作成
-touch ~/.zshrc
+touch ~/.bashrc
 
 # エイリアスの設定
 echo "alias re='exec $SHELL -l'
@@ -84,10 +76,10 @@ alias aptr='apt remove'
 alias apti='apt install'
 alias aptl='apt list'
 alias aptu='apt update && apt upgrade'
-alias apti='apt install'" > ~/.zshrc
+alias apti='apt install'" > ~/.bashrc
 
 # 反映
-source .zshrc
+source .bashrc
 
 # Ubuntu導入
 
@@ -105,7 +97,7 @@ chmod +x ubuntu.sh
 
 # Ubuntuを自動起動させるようにする
 echo "cd ./ubuntu-in-termux
-./startubuntu.sh" > .zshrc
+./startubuntu.sh" > .bashrc
 
 # スクリプトを実行
 ./ubuntu.sh -y
