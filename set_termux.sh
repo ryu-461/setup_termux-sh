@@ -10,7 +10,8 @@ termux-setup-storage
 yes | pkg install proot yarn git curl wget build-essential vim wget zsh
 
 # プロジェクト管理ディレクトリを作成
-mkdir -p ~/Documents/{vue-projects,nuxt-projects,react-projects,next-projects}
+mkdir ~/Documents
+mkdir ~/Documents/vue-projects | mkdir ~/Documents/nuxt-projects | mkdir ~/Documents/react-projects | mkdir ~/Documents/next-projects
 
 # Zshを既定のシェルに設定
 chsh -s zsh
