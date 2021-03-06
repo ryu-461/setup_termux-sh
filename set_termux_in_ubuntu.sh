@@ -34,6 +34,8 @@ echo "cd ./ubuntu-in-termux
 # Ubuntuを起動
 ./startubuntu.sh
 
+#!/bin/bash
+
 # Ubuntuのパッケージアップデート
 apt update && apt upgrade -y
 
