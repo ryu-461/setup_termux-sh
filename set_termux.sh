@@ -9,10 +9,13 @@ termux-setup-storage
 # 必要なパッケージをまとめてインストール
 yes | pkg install proot yarn git curl wget build-essential vim wget zsh
 
-# Zshを既定のシェルにする
+# Zshを既定のシェルに設定
 chsh -s zsh
 
-# .zshrcファイルを構成
+# .bashrcを作成
+touch ~/.bashrc | echo "zsh" > ~/.bashrc
+
+# .zshrcを作成
 touch ~/.zshrc
 
 # エイリアスの設定
