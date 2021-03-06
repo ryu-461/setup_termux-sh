@@ -9,6 +9,10 @@ termux-setup-storage
 # 必要なパッケージをまとめてインストール
 yes | pkg install proot yarn git curl wget build-essential vim wget zsh
 
+# プロジェクト管理ディレクトリを作成
+mkdir ~/Documents
+mkdir~/{vue-projects,nuxt-projects,react-projects,next-projects}
+
 # Zshを既定のシェルに設定
 chsh -s zsh
 
@@ -81,7 +85,15 @@ alias aptr='apt remove'
 alias apti='apt install'
 alias aptl='apt list'
 alias aptu='apt update && apt upgrade'
-alias apti='apt install'" > ~/.zshrc
+alias apti='apt install'
+
+# code-server
+alias codes='code-server'" > ~/.zshrc
+
+# code-serverをインストール
+yarn global add code-server
+
+exec $SHELL -l
 
 echo Done!!
 exit
